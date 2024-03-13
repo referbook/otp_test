@@ -1,0 +1,32 @@
+<!-- templates/view_otp_counts.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View OTP Counts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>View OTP Counts (Admin)</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Phone Number</th>
+                <th>OTP Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in otp_counts %}
+                <tr>
+                    <td>{{ entry[0] }}</td>
+                    <td>{{ entry[1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
